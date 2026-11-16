@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "checkJs": false,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "electron/**/*.js",
+    "src/js/**/*.js"
+  ]
+}
