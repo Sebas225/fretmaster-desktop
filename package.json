@@ -8,9 +8,9 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "dist:win": "electron-builder --win --x64",
-    "dist:mac": "electron-builder --mac --universal",
-    "dist:all": "electron-builder -mw"
+    "dist:win": "electron-builder --win --x64 --publish never",
+    "dist:mac": "electron-builder --mac --universal --publish never",
+    "dist:all": "electron-builder -mw --publish never"
   },
   "devDependencies": {
     "electron": "^33.2.0",
@@ -66,15 +66,18 @@
             "x64"
           ]
         }
-      ],
-      "artifactName": "${productName}-Windows-${version}-${target}.${ext}"
+      ]
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "FretMaster Studio"
+      "shortcutName": "FretMaster Studio",
+      "artifactName": "${productName}-Windows-${version}-Setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-Windows-${version}-Portable.${ext}"
     }
   }
 }
